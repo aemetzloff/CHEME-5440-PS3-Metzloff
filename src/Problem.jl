@@ -40,22 +40,45 @@ function generate_problem_dictionary()
 	(number_of_species,number_of_reactions) = size(stoichiometric_matrix)
 
 	# Setup the flux bounds array -
-	flux_bounds_array = zeros(number_of_reactions,2)
+	flux_bounds_array = [0 7.308
+	0 1.242
+	0 8.964
+	0 3.172
+	-0.493 0.493
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10
+	0 10]
+	
 	# TODO: update the flux_bounds_array for each reaction in your network
 	# TODO: col 1 => lower bound
 	# TODO: col 2 => upper bound
 	# TODO: each row is a reaction
+	# B's will be between 0 and 10
+	# v's can be calculated as Vmax = Kcat*[E]. Remember to convert Kcats to hours!!!
 
 	# Setup default species bounds array -
 	species_bounds_array = zeros(number_of_species,2)
 	# TODO: NOTE - we by default assume Sv = 0, so species_bounds_array should be a M x 2 array of zeros
 	# TODO: however, if you formulate the problem differently you *may* need to change this 
+	# -> I think we're good. 
 
 	# Min/Max flag - default is minimum -
 	is_minimum_flag = true
 
 	# Setup the objective coefficient array -
 	objective_coefficient_array = zeros(number_of_reactions)
+	objective_coefficient_array[9] = -1
 	# TODO: update me to maximize Urea production (Urea leaving the virtual box) 
 	# TODO: if is_minimum_flag = true => put a -1 in the index for Urea export
 	
