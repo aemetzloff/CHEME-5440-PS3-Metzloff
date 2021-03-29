@@ -44,12 +44,8 @@ function generate_problem_dictionary()
 	0 1.242
 	0 8.964
 	0 3.172
-	-0.493 0.493
-	0 10
-	0 10
-	0 10
-	0 10
-	0 10
+	0 0.493
+	0 0.493
 	0 10
 	0 10
 	0 10
@@ -78,7 +74,7 @@ function generate_problem_dictionary()
 
 	# Setup the objective coefficient array -
 	objective_coefficient_array = zeros(number_of_reactions)
-	objective_coefficient_array[9] = -1
+	objective_coefficient_array[10] = -1
 	# TODO: update me to maximize Urea production (Urea leaving the virtual box) 
 	# TODO: if is_minimum_flag = true => put a -1 in the index for Urea export
 	
